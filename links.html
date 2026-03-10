@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links | Collab Create</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Specific overrides for the Links purely centered view */
+        body,
+        html {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--bg-color);
+        }
+
+        .links-container {
+            width: 100%;
+            max-width: 450px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .profile-img-container {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 190, 11, 0.2), rgba(5, 5, 5, 1));
+            border: 2px solid var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem auto;
+            box-shadow: 0 0 20px rgba(255, 190, 11, 0.2);
+        }
+
+        .username {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .bio {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            width: 100%;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+        }
+
+        .link-btn:hover {
+            background: rgba(255, 190, 11, 0.1);
+            border-color: var(--accent-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 190, 11, 0.15);
+        }
+
+        .link-btn.discord {
+            border-color: #5865F2;
+        }
+
+        .link-btn.discord:hover {
+            background: rgba(88, 101, 242, 0.1);
+            border-color: #5865F2;
+            box-shadow: 0 5px 15px rgba(88, 101, 242, 0.3);
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .social-icons a {
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="links-container">
+
+        <div class="profile-img-container">
+            <i data-lucide="zap" style="color: var(--accent-gold); width: 40px; height: 40px;"></i>
+        </div>
+
+        <h1 class="username">COLLAB CREATE</h1>
+        <p class="bio">Digital Infrastructure for the 1%.</p>
+
+        <a href="https://creator.collabcreatemarketing.com/" class="link-btn">
+            <i data-lucide="globe"></i>
+            I Need a Website For My Brand
+        </a>
+
+        <a href="https://operators.collabcreatemarketing.com/" class="link-btn"
+            style="border-color: var(--accent-gold);">
+            <i data-lucide="cpu" style="color: var(--accent-gold);"></i>
+            I Want to Learn The Operator System
+        </a>
+
+        <a href="https://discord.gg/tBDdRz4d" class="link-btn discord">
+            <i data-lucide="discord" style="color: #5865F2;"></i>
+            Join the Free Discord Cartel
+        </a>
+
+        <div class="social-icons">
+            <a href="https://tiktok.com/@yourusername" target="_blank" aria-label="TikTok">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                </svg>
+            </a>
+            <a href="https://instagram.com/yourusername" target="_blank" aria-label="Instagram">
+                <i data-lucide="instagram"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>
