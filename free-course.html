@@ -105,23 +105,31 @@
             btn.style.opacity = '0.7';
             btn.disabled = true;
 
-            // 2. Here you will add your Formspree endpoint eventually to save the email
-            // fetch('https://formspree.io/f/YOUR_ENDPOINT', { method: 'POST', body: new FormData(this) })
-
-            // 3. Simulate processing and trigger the download
-            setTimeout(() => {
+            // 2. Submit to Formspree silently
+            fetch('https://formspree.io/f/xjgayrqy', {
+                method: 'POST',
+                body: new FormData(this),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                // 3. Trigger the success state and download
                 this.style.display = 'none';
                 successMsg.style.display = 'flex';
 
                 // Trigger the hidden PDF download
                 const link = document.createElement('a');
-                link.href = 'assets/The_Operator_Playbook.pdf'; // Path to the PDF in your repo
+                link.href = 'assets/The_Operator_Playbook.pdf';
                 link.download = 'The_Operator_Playbook.pdf';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
-
-            }, 1000);
+            }).catch(error => {
+                alert("There was an error submitting your email. Please try again.");
+                btn.innerHTML = 'UNLOCK NOW Access';
+                btn.style.opacity = '1';
+                btn.disabled = false;
+            });
         });
     </script>
 </body>
